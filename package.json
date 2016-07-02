@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node api/app.js",
     "build": "webpack",
-    "test": "mocha"
+    "test": "mocha",
+    "postinstall": "webpack"
   },
   "engines": {
     "node": "6.2.0"
