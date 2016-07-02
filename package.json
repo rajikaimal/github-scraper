@@ -2,7 +2,7 @@
   "name": "github-scraper",
   "version": "0.0.1",
   "description": "github-scraper",
-  "main": "app.js",
+  "main": "api/app.js",
   "scripts": {
     "start": "node api/app.js",
     "build": "webpack",
