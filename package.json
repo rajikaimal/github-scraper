@@ -22,8 +22,11 @@
   },
   "homepage": "",
   "dependencies": {
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "flux": "^2.1.1",
+    "github": "^2.1.0",
     "keymirror": "^0.1.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
