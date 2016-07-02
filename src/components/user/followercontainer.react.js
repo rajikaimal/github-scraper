@@ -15,13 +15,16 @@ const followercontainer = React.createClass({
         usercontainerAction.getFollowers(username);
     },
     componentWillUnmount: function () {
-        
+        usercontainerStore.removeChangeListener(this._onUnmount);
     },
     _onChange: function() {
         console.log(usercontainerStore.retrieveFollowers());
         this.setState({
             followers: usercontainerStore.retrieveFollowers()
         })
+    },
+    _onUnmount: function() {
+        
     },
     render: function () {
         return (

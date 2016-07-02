@@ -15,12 +15,15 @@ const followingcontainer = React.createClass({
         usercontainerAction.getFollowing(username);
     },
     componentWillUnmount: function () {
-        
+        usercontainerStore.removeChangeListener(this._onUnmount);
     },
     _onChange: function() {
         this.setState({
             following: usercontainerStore.retrieveFollowing()
         });
+    },
+    _onUnmount: function() {
+        
     },
     render: function () {
         return (
