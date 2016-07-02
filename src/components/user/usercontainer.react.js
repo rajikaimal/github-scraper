@@ -29,9 +29,16 @@ const usercontainer = React.createClass({
         return (
             <div>
                 <User avatar={this.state.user.avatar_url} name={this.state.user.name} username={this.state.user.login}/>
-                <Link to={`/user/${username}/repos`}> Repositories </Link> 
-                <Link to={`/user/${username}/following`}> Following </Link>
-                <Link to={`/user/${username}/followers`}> Followers </Link>  
+                {
+                    this.state.user.avatar_url ? 
+                            <div>
+                                <Link to={`/user/${username}/repos`}> Repositories </Link> 
+                                <Link to={`/user/${username}/following`}> Following </Link>
+                                <Link to={`/user/${username}/followers`}> Followers </Link>
+                            </div>
+                        : ''  
+                }
+
                 {this.props.children} 
             </div>
         );
