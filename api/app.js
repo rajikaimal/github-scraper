@@ -30,6 +30,7 @@ const github = new GitHubApi({
     timeout: 5000
 });
 
+
 app.use('/api/v1/user', userRoutes(router, github));
 
 app.listen(port, () => {

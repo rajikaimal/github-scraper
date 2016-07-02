@@ -34,7 +34,23 @@ const userRoutes = function(router, github) {
 			user: username,
 			type: 'owner'
 		}, (err, response) => {
-			res.json(response);
+			res.json({
+				repos: response	
+			});
+		});
+	})
+	/**get user data
+	* {param} username
+	*/
+	.get('/data', (req, res) => {
+		let username = req.query.username;
+		console.log(`username ${username}`);
+		github.users.getForUser({
+			user: username
+		}, (err, response) => {
+			res.json({
+				user: response
+			});
 		});
 	});
 
