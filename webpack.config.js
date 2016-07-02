@@ -3,7 +3,7 @@ const path = require('path');
 const env = process.env.NODE_ENV || 'development';
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const config = {
-  entry: path.resolve(__dirname, './src/app.js'),
+  entry: ['whatwg-fetch', path.resolve(__dirname, './src/app.js')],
   output: {
     filename: 'src/bundle.js'
   },
