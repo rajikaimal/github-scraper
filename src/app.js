@@ -5,13 +5,19 @@ import ReactDOM from 'react-dom';
 
 //Router components
 
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router';
 
-import SampleComponent from './components/core/sample.react';
+import ScraperContainer from './components/core/scraper.react';
+import Repos from './components/repo/repocontainer.react';
+import User from './components/user/usercontainer.react';
 
 ReactDOM.render((
-    <Router history={hashHistory}>
-      <Route path="/" component={SampleComponent} />
+    <Router history={browserHistory}>
+      <Route path="/" component={ScraperContainer}>
+      	<Route path="user/:username" component={User} >
+      		<Route path="repos" component={Repos} />
+      	</Route>
+      </Route> 
     </Router>
   ),
   document.getElementById('target-node')
