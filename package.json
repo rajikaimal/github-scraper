@@ -7,7 +7,7 @@
     "start": "node api/app.js",
     "build": "webpack",
     "test": "mocha",
-    "postinstall": "webpack"
+    "postinstall": "webpack --config ./webpack.prod.config.js"
   },
   "engines": {
     "node": "6.2.0"
