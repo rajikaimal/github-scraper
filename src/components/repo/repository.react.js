@@ -5,10 +5,11 @@ const repository = React.createClass({
         return (
             <div>
                 <li>
-                    <a href={this.props.url}>{this.props.name} </a> <br/>
-                    {this.props.description} 
+                    <a href={this.props.url}>{this.props.name} </a> 
                     stars : {this.props.stars}
                     forks : {this.props.forks}
+                    <br/>
+                    {this.props.description} 
                 </li>
             </div>
         );
