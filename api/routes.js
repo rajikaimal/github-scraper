@@ -10,7 +10,9 @@ const userRoutes = function(router, github) {
 		    user: username
 		}, function(err, response) {
 		    //console.log(JSON.stringify(response));
-		    res.json(response);
+		    res.json({ following: 
+		    	response
+		    });
 		});
 	})
 	/**get followers
@@ -22,7 +24,9 @@ const userRoutes = function(router, github) {
 		    user: username
 		}, function(err, response) {
 		    //console.log(JSON.stringify(response));
-		    res.json(response);
+		    res.json({
+		    	followers: response
+		    });
 		});	
 	})
 	/**get repos

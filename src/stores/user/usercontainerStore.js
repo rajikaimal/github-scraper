@@ -6,14 +6,24 @@ import assign from 'object-assign';
 const CHANGE_EVENT = 'change';
 
 let userObj = {};
+let followersArr = [];
+let followingArr = [];
 
-const usercontainerStoreStore = assign({}, EventEmitter.prototype, {
+const usercontainerStore = assign({}, EventEmitter.prototype, {
   saveUser: function (user) {
     userObj = user;
   },
 
+  saveFollowers: function (followers) {
+    followersArr = followers;
+  },
+
   retrieveUser: function() {
     return userObj;
+  },
+
+  retrieveFollowers: function() {
+    return followersArr;
   },
 
   emitChange: function () {
@@ -32,10 +42,14 @@ const usercontainerStoreStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function (payload) {
   switch (payload.action.actionType) {
     case (usercontainerConstants.GETUSER):
-      usercontainerStoreStore.saveUser(payload.action.user);
-      usercontainerStoreStore.emitChange();
+      usercontainerStore.saveUser(payload.action.user);
+      usercontainerStore.emitChange();
+      break;
+    case (usercontainerConstants.GETFOLLOWERS):
+      usercontainerStore.saveFollowers(payload.action.followers);
+      usercontainerStore.emitChange();
       break;
   }
 });
 
-export default usercontainerStoreStore;
+export default usercontainerStore;
