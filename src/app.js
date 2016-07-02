@@ -11,6 +11,7 @@ import ScraperContainer from './components/core/scraper.react';
 import Repos from './components/repo/repocontainer.react';
 import User from './components/user/usercontainer.react';
 import Followers from './components/user/followercontainer.react';
+import Following from './components/user/followingcontainer.react';
 
 ReactDOM.render((
     <Router history={browserHistory}>
@@ -18,6 +19,7 @@ ReactDOM.render((
       	<Route path="user/:username" component={User} >
       		<Route path="repos" component={Repos} />
       		<Route path="followers" component={Followers} />
+      		<Route path="following" component={Following} />
       	</Route>
       </Route> 
     </Router>

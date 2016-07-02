@@ -10,8 +10,8 @@ const userRoutes = function(router, github) {
 		    user: username
 		}, function(err, response) {
 		    //console.log(JSON.stringify(response));
-		    res.json({ following: 
-		    	response
+		    res.json({ 
+		    	following: response
 		    });
 		});
 	})

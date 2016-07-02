@@ -18,12 +18,20 @@ const usercontainerStore = assign({}, EventEmitter.prototype, {
     followersArr = followers;
   },
 
+  saveFollowing: function (following) {
+    followingArr = following;
+  },
+
   retrieveUser: function() {
     return userObj;
   },
 
   retrieveFollowers: function() {
     return followersArr;
+  },
+
+  retrieveFollowing: function() {
+    return followingArr;
   },
 
   emitChange: function () {
@@ -47,6 +55,10 @@ AppDispatcher.register(function (payload) {
       break;
     case (usercontainerConstants.GETFOLLOWERS):
       usercontainerStore.saveFollowers(payload.action.followers);
+      usercontainerStore.emitChange();
+      break;
+    case (usercontainerConstants.GETFOLLOWING):
+      usercontainerStore.saveFollowing(payload.action.following);
       usercontainerStore.emitChange();
       break;
   }
