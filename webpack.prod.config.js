@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'production';
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const config = {
   entry: ['whatwg-fetch', path.resolve(__dirname, './src/app.js')],
