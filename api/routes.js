@@ -56,6 +56,22 @@ const userRoutes = function(router, github) {
 				user: response
 			});
 		});
+	})
+	/**get user data
+	* {param} username
+	*/
+	.get('/organizations', (req, res) => {
+		let username = req.query.username;
+		console.log(`username ${username}`);
+		console.log('orgs .......');
+		github.orgs.getForUser({
+			user: username
+		}, (err, response) => {
+			console.log(response);
+			res.json({
+				orgs: response
+			});
+		});
 	});
 
 	return router;
