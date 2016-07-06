@@ -1,6 +1,4 @@
 import React from 'react';
-//import inputAction from '../../actions/core/inputaction';
-//import inputStore from '../../stores/core/inputstore';
 
 const input = React.createClass({
     getInitialState: function () {
@@ -18,7 +16,7 @@ const input = React.createClass({
         let username = this.refs.username.value;
         this.setState({
             username: username
-        })
+        });
     },
     render: function () {
         return (

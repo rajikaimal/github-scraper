@@ -9,7 +9,6 @@ const ScraperContainer = withRouter(React.createClass({
         let username = value;
         this.props.router.push(`/user/${username}`);
         usercontainerAction.getUser(username);
-        console.log('done ...');
     },
     render: function () {
         return (
