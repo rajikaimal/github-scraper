@@ -8,6 +8,7 @@ const CHANGE_EVENT = 'change';
 let userObj = {};
 let followersArr = [];
 let followingArr = [];
+let orgsArr = [];
 
 const usercontainerStore = assign({}, EventEmitter.prototype, {
   saveUser: function (user) {
@@ -22,6 +23,10 @@ const usercontainerStore = assign({}, EventEmitter.prototype, {
     followingArr = following;
   },
 
+  saveOrgs: function(orgs) {
+    orgsArr = orgs;
+  },
+
   retrieveUser: function() {
     return userObj;
   },
@@ -32,6 +37,10 @@ const usercontainerStore = assign({}, EventEmitter.prototype, {
 
   retrieveFollowing: function() {
     return followingArr;
+  },
+
+  retrieveOrgs: function() {
+    return orgsArr;
   },
 
   emitChange: function () {
@@ -59,6 +68,10 @@ AppDispatcher.register(function (payload) {
       break;
     case (usercontainerConstants.GETFOLLOWING):
       usercontainerStore.saveFollowing(payload.action.following);
+      usercontainerStore.emitChange();
+      break;
+    case (usercontainerConstants.GETORGS):
+      usercontainerStore.saveOrgs(payload.action.orgs);
       usercontainerStore.emitChange();
       break;
   }

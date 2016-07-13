@@ -6,7 +6,6 @@ var usercontainerAction = {
   getUser: function (username) {
     fetch(`/api/v1/user/data?username=${username}`)
 	  .then((response) => {
-	  	
 	    return response.json();
 	  }).then((json) => {
 	  	if(json.user != null) {
@@ -26,8 +25,7 @@ var usercontainerAction = {
   },
   getFollowers: function(username) {
   	fetch(`/api/v1/user/followers?username=${username}`)
-	  .then((response) => {
-	  	
+	  .then((response) => {	  	
 	    return response.json();
 	  }).then((json) => {
 	  	if(json.followers != null || json.followers != '') {
@@ -48,7 +46,6 @@ var usercontainerAction = {
   getFollowing: function(username) {
   	fetch(`/api/v1/user/following?username=${username}`)
 	  .then((response) => {
-	  	
 	    return response.json();
 	  }).then((json) => {
 	  	
@@ -57,6 +54,26 @@ var usercontainerAction = {
 		      actionType: usercontainerConstant.GETFOLLOWING,
 		      following: json.following,
 		    });	
+	  	}
+	  	else {
+	  		//error handling
+	  		// AppDispatcher.handleViewAction({
+		   //    actionType: usercontainerConstant.INCREMENT,
+		   //    data: 'Sampledata',
+		   //  });	
+	  	}
+	  });  	
+  },
+  getOrgs: function(username) {
+  	fetch(`/api/v1/user/organizations?username=${username}`)
+	  .then((response) => {	  	
+	    return response.json();
+	  }).then((json) => {
+	  	if(json.following != null || json.following != '') {
+	  		AppDispatcher.handleViewAction({
+		      actionType: usercontainerConstant.GETORGS,
+		      orgs: json.orgs,
+		    });
 	  	}
 	  	else {
 	  		//error handling
