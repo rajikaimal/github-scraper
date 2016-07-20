@@ -1,11 +1,13 @@
 import React from 'react';
 
+//declare styles object
 const styles = {
     img: {
         'width': '75'
     }
 }
 
+//user component declared with createClass factory method from react.creatClass
 const user = React.createClass({
     render: function () {
         return (
@@ -19,4 +21,5 @@ const user = React.createClass({
     }
 });
 
+//export user component for making it reusable custom component
 export default user;
