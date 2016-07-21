@@ -54,5 +54,9 @@
     "node-sass": "^3.4.2",
     "react-addons-test-utils": "^15.2.1",
     "webpack": "^1.12.9"
+  },
+  "jest": {
+    "testFileExtensions" : ["js"],
+    "unmockedModulePathPatterns": ["react"]
   }
 }
