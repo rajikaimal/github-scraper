@@ -4,6 +4,10 @@ import Input from './input.react';
 import Footer from './footer.react';
 import usercontainerAction from '../../actions/user/usercontainerAction';
 
+//acts as the parent component
+//renders input component with input text & button
+//renders children components from react router accoring to route
+//eg : components/repo/repoContainer.react.js
 const ScraperContainer = withRouter(React.createClass({
     _handleClick: function(value) {
         let username = value;

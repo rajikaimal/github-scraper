@@ -1,5 +1,8 @@
 import React from 'react';
 
+//input component
+//contains input text for adding username
+//button with onClick event which mutates the state
 const input = React.createClass({
     getInitialState: function () {
         return {
