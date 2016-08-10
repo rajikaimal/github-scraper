@@ -10,3 +10,13 @@ npm install -g webpack
 webpack
 npm start
 ```
+
+### Guidelines
+
+ - **api** : directory for Node.JS API for fetching data from GitHub REST API
+ - **src** : react-flux application specific components
+  - actions : flux actions for managing actions within flux application
+  - components : React.JS components (parent and child components)
+  - constants : flux constants for identifying actions uniquely
+  - dispatcher : Facebook implmentation of flux dispatcher
+  - stores : flux stores for storing state
