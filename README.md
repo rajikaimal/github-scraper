@@ -1,5 +1,7 @@
 # github-scraper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rajikaimal/github-scraper.svg)](https://greenkeeper.io/)
+
 ### Usage
 
 ```
